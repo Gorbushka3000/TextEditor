@@ -8,9 +8,24 @@
         Title="MainWindow" Height="500" Width="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <ToolBar Height="30" VerticalAlignment="Top" Grid.Row="0">
+            <ToggleButton>
+                <Image Source="icon/copy.png"/>
+            </ToggleButton>
+            <Button>
+                <Image Source="icon/document.png"/>
+            </Button>
+            <Button>
+                <Image Source="icon/save.png"/>
+            </Button>
+            <Button>
+                <Image Source="icon/settings.png"/>
+            </Button>
+            <TextBox Background="LightBlue" Width="100">Поиск...</TextBox>
+        </ToolBar>
         <RichTextBox Grid.Row="1">
             <FlowDocument>
                 <Paragraph>
