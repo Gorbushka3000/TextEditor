@@ -28,23 +28,19 @@
             <Button>
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\settings.png"/>
             </Button>
-            <TextBox Background="LightBlue" Width="100">Поиск...</TextBox>
             <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\bold.png"/>
             </ToggleButton>
-            <ToggleButton Command="EditingCommands.ToggleItalic">
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\italic.png"/>
             </ToggleButton>
-            <ToggleButton Command="EditingCommands.ToggleUnderline">
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderLine">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\underline.png"/>
             </ToggleButton>
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"></ComboBox>
+            <ComboBox Name="cmbFontFamily" Width="125" SelectionChanged="cmbFontFamily_SelectionChanged"></ComboBox>
         </ToolBar>
-        <RichTextBox Grid.Row="1">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
+        <RichTextBox Name="textEditor" Grid.Row="1" SelectionChanged="textEditor_SelectionChanged">
         </RichTextBox>
     </Grid>
 </Window>
