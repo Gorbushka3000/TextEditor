@@ -6,25 +6,38 @@
         xmlns:local="clr-namespace:TextEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ToolBar Height="30" VerticalAlignment="Top" Grid.Row="0">
-            <ToggleButton>
-                <Image Source="icon/copy.png"/>
-            </ToggleButton>
+        <ToolBar Height="40" VerticalAlignment="Top" Grid.Row="0">
             <Button>
-                <Image Source="icon/document.png"/>
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\copy.png"/>
+            </Button>
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\document.png"/>
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\save.png"/>
             </Button>
             <Button>
-                <Image Source="icon/save.png"/>
-            </Button>
-            <Button>
-                <Image Source="icon/settings.png"/>
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\settings.png"/>
             </Button>
             <TextBox Background="LightBlue" Width="100">Поиск...</TextBox>
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\bold.png"/>
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\italic.png"/>
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\underline.png"/>
+            </ToggleButton>
         </ToolBar>
         <RichTextBox Grid.Row="1">
             <FlowDocument>
@@ -33,7 +46,5 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-
-
     </Grid>
 </Window>
