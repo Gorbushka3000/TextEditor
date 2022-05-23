@@ -16,18 +16,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ToolBar Height="40" VerticalAlignment="Top" Grid.Row="0">
-            <Button>
-                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\copy.png"/>
-            </Button>
             <Button Command="ApplicationCommands.Open">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\document.png"/>
             </Button>
             <Button Command="ApplicationCommands.Save">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\save.png"/>
-            </Button>
-            <Button>
-                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\settings.png"/>
-            </Button>
+            </Button>            
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"></ComboBox>
+            <ComboBox Name="cmbFontFamily" Width="125" SelectionChanged="cmbFontFamily_SelectionChanged"></ComboBox>
             <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\bold.png"/>
             </ToggleButton>
@@ -37,8 +33,6 @@
             <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderLine">
                 <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\underline.png"/>
             </ToggleButton>
-            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"></ComboBox>
-            <ComboBox Name="cmbFontFamily" Width="125" SelectionChanged="cmbFontFamily_SelectionChanged"></ComboBox>
         </ToolBar>
         <RichTextBox Name="textEditor" Grid.Row="1" SelectionChanged="textEditor_SelectionChanged">
         </RichTextBox>
