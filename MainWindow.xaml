@@ -6,19 +6,35 @@
         xmlns:local="clr-namespace:TextEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <RichTextBox Grid.Row="1">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
+        <ToolBar Height="40" VerticalAlignment="Top" Grid.Row="0">
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\document.png"/>
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\save.png"/>
+            </Button>            
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"></ComboBox>
+            <ComboBox Name="cmbFontFamily" Width="125" SelectionChanged="cmbFontFamily_SelectionChanged"></ComboBox>
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\bold.png"/>
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\italic.png"/>
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderLine">
+                <Image Source="C:\Users\glebd\Desktop\Learn_C#\TextEditor\icon\underline.png"/>
+            </ToggleButton>
+        </ToolBar>
+        <RichTextBox Name="textEditor" Grid.Row="1" SelectionChanged="textEditor_SelectionChanged">
         </RichTextBox>
-
-
     </Grid>
 </Window>
